@@ -38,7 +38,7 @@
   
   .mainImg {
     color: black;
-    width: 40%; /* Make the image smaller */
+    width: 50%; /* Make the image smaller */
     height: auto;
     box-shadow: rgba(243, 235, 235, 0.05) 0px 5px 10px 7px;
     border-radius: 15px; /* Make the border more rounded */
@@ -48,10 +48,10 @@
   }
   
   .text-blk.headingText {
-    font-size: 18px; /* Make the text smaller */
+    font-size: 20px; /* Make the text smaller */
     font-weight: 700;
-    line-height: 24px;
-    color: rgb(0, 255, 0); /* Use a bright color for headings */
+    line-height: 26px;
+    color: rgb(0, 183, 255); /* Use a bright color for headings */
     padding: 0 5px;
     margin: 0 0 10px 0;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
@@ -82,7 +82,7 @@
     line-height: 22px;
     color: rgb(200, 200, 200); /* Light gray for description */
     margin: 0;
-    padding: 0 5px 20 5px;
+    padding: 0 5px 20px 5px;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
     transform: translateY(20px);
     opacity: 0;
@@ -128,6 +128,7 @@
   
   .allText.aboveText {
     margin: 0;
+
   }
   
   .allText.bottomText {
@@ -135,39 +136,26 @@
   }
   
   @media (max-width: 1024px) {
-    .responsive-container-block.Container {
-        max-width: 850px;
-    }
-  
-    .mainImg {
-        width: 45%;
-        height: auto;
-    }
-  
-    .text-blk.description {
-        font-size: 14px;
-    }
-  
-    .allText {
-        width: 40%;
-        margin-left: 10px;
-    }
-  
-    .text-blk.subHeadingText {
-        font-size: 14px;
-    }
-  
-    .responsive-container-block.Container.bottomContainer {
-        margin: 60px auto 50px auto;
-    }
-  
-    .allText.aboveText {
-        margin: 20px 0 0 10px;
-    }
-  
-    .allText.bottomText {
-        margin: 20px 10px 0 0;
-    }
+    .responsive-container-block.bigContainer {
+      padding: 10px 20px; /* Adjust padding as needed */
+  }
+
+  .responsive-container-block.Container {
+      max-width: 850px; /* Adjust max-width */
+      margin: 30px auto; /* Adjust margin to reduce gaps */
+  }
+
+  .responsive-container-block.Container.bottomContainer {
+      margin: 40px auto; /* Adjust bottom container margin */
+  }
+
+  .allText.aboveText {
+      margin: 10px 0 0 0; /* Adjust margin */
+  }
+
+  .allText.bottomText {
+      margin: 10px 0 0 0; /* Adjust margin */
+  }
   }
   
   @media (max-width: 768px) {

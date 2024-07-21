@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import SignUpForm, LoginForm
+from User.models import Member
+from User.forms import MemberForm
 from django.contrib.auth import authenticate, login, logout
 # Create your views here.
 
@@ -36,7 +38,7 @@ def login_view(request):
                 return redirect('adminpage')
             elif user is not None and user.is_user:
                 login(request, user)
-                return redirect('user')
+                return redirect('home')
             elif user is not None and user.is_trainer:
                 login(request, user)
                 return redirect('trainer')
@@ -51,8 +53,6 @@ def admin(request):
     return render(request,'Register/admin.html')
 
 
-def user(request):
-    return render(request,'Register/user.html')
 
 
 def trainer(request):

@@ -14,17 +14,19 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
     <title>FitJourney Login</title>
+    
 </head>
 <style>
     body{
-      background: url("{% static 'img/cover.jpg' %}");
+      background: url("{% static 'img/coverlog.jpg' %}");
     }
     </style>
+
 <body>
 <div class="content">
     <div class="form-block">
         <div class="mb-4">
-            <h3>Login to <strong>Your Account</strong></h3>
+            <h2>Login to <strong>Your Account</strong></h2>
         </div>
         <span class="mb-0 text-muted" style="color: red;">
             {% if msg %}

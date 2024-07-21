@@ -6,9 +6,16 @@ from django.contrib.auth.decorators import login_required
 from .forms import GoalForm
 from django.db.models import Sum 
 from .models import Goal, Progress, Notification
+from User .models import Member
 
 @login_required
 def set_goal(request):
+    user = request.user
+    profile = None
+    try:
+        profile = Member.objects.get(user=user)
+    except Member.DoesNotExist:
+        pass
     if request.method == 'POST':
         form = GoalForm(request.POST)
         if form.is_valid():
@@ -20,10 +27,16 @@ def set_goal(request):
     else:
         form = GoalForm()
     
-    return render(request, 'Goal/set_goal.html', {'form': form})
+    return render(request, 'Goal/set_goal.html', {'form': form,'profile': profile})
 
 @login_required
 def track_progress(request, goal_id):
+    user = request.user
+    profile = None
+    try:
+        profile = Member.objects.get(user=user)
+    except Member.DoesNotExist:
+        pass
     goal = get_object_or_404(Goal, id=goal_id, user=request.user)
     if request.method == 'POST':
         current_value = float(request.POST.get('current_value', 0))
@@ -37,7 +50,7 @@ def track_progress(request, goal_id):
     
     progress = Progress.objects.filter(goal=goal)
     notifications = Notification.objects.filter(user=request.user, read=False)
-    return render(request, 'Goal/track_progress.html', {'goal': goal, 'progress': progress, 'notifications': notifications})
+    return render(request, 'Goal/track_progress.html', {'goal': goal, 'progress': progress, 'notifications': notifications,'profile': profile})
 
 @login_required
 def check_goal_completion(goal):
@@ -53,5 +66,11 @@ def check_goal_completion(goal):
 
 @login_required
 def goal_history(request):
+    user = request.user
+    profile = None
+    try:
+        profile = Member.objects.get(user=user)
+    except Member.DoesNotExist:
+        pass
     goals = Goal.objects.filter(user=request.user)
-    return render(request, 'Goal/goal_history.html', {'goals': goals})
+    return render(request, 'Goal/goal_history.html', {'goals': goals, 'profile': profile})

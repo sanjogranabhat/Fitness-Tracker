@@ -185,9 +185,8 @@ nav .logo-img {
     transition: all 0.3s ease;
 }
 .profile-dropdown-btn img {
-    width: 40px;
-    height: 40px;
-    display: block;
+    width: 50px;
+    height: auto;
     object-fit: cover;
    
 }
@@ -210,15 +209,15 @@ nav .logo-img {
 
 .profile-dropdown-list {
     position: absolute;
-    top: 45px;
-    width: 220px;
-    right: 0;
-    background-color: rgb(93, 73, 131);
+    top: 55px;
+    max-width: 220px;
+    width: 100%;
+    right: 10px;
+    background-color: rgb(77, 77, 77);
     border-radius: 10px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s;
-    right: 0;
  
 }
 .profile-dropdown-list p{
@@ -244,7 +243,7 @@ nav .logo-img {
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
-    color: rgb(15, 15, 15);
+    color: white;
 }
 
 .profile-dropdown-list-item a i {
@@ -252,7 +251,7 @@ nav .logo-img {
     font-size: 1.1rem;
     width: 2.3rem;
     height: 2.3rem;
-    color: rgb(14, 13, 13);
+    color: white;
     line-height: 2.3rem;
     text-align: center;
     margin-right: 1rem;
@@ -263,18 +262,23 @@ nav .logo-img {
 .profile-dropdown-list-item:hover {
     padding-left: 1.5rem;
     color: white;
-    background-color: rgb(253, 250, 250);
+    background-color: black;
   
 }
+.profile-dropdown-list li p{
 
-
-
+    text-align: center;
+}
+.profile-dropdown-list li p a{
+    color: white;
+    text-decoration: none;
+}
 
 
 /*Landing Section */
 .hero {
     background: no-repeat center center/cover;
-    height: 110vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -294,20 +298,24 @@ nav .logo-img {
     font-size: 1.5rem;
     margin-bottom: 2rem;
 }
-
-.hero .btn {
-    padding: 1rem 2rem;
-    background-color: var(--main-color);
-    color: var(--text-color);
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.hero .btn:hover {
-    background-color: #24c946;
-}
-
+.btn {
+    padding: 0.6rem 1.3rem;
+    background-color: #fff;
+    border: 2px solid #fafafa;
+    font-size: 0.95rem;
+    color: #1abc9c;
+    line-height: 1;
+    border-radius: 25px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 0;
+  }
+  
+  .btn:hover {
+    background-color: transparent;
+    color: #fff;
+  }
 
 
 
@@ -605,6 +613,42 @@ section {
 
 }
 
+@media (max-width: 768px) {
+    .hero {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .hero h1 {
+        font-size: 2.5rem; /* Decrease font size for smaller screens */
+    }
+
+    .hero p {
+        font-size: 1.2rem; /* Decrease font size for smaller screens */
+    }
+    
+    .footer-links{
+        display: flex;
+        justify-content: center;
+    }
+
+    .profile-dropdown-list {
+        position: absolute;
+        top: 395px; 
+        right: 135px; 
+        width: 200px; 
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .profile-dropdown-list {
+        position: absolute;
+        top: 350px; 
+        right: 125px; 
+        width: 200px; 
+    }
+}
+
 /* Additional media query for 360px screen width */
 @media screen and (max-width: 360px) {
     .hero h1 {
@@ -667,8 +711,9 @@ section {
         height: 25px; 
     }
 
-    .profile-dropdown-list {
-        width: 180px;
-    }
     
+    .footer-links{
+        display: flex;
+        justify-content: center;
+    }
 }

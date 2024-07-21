@@ -47,9 +47,9 @@ INSTALLED_APPS = [
     'Exercise',
     'Progress',
     'Social_Media',
-    'Workout',
     'Dashboard',
     'planning',
+    'Membership',
     
 ]
 

@@ -8,6 +8,7 @@ body {
     justify-content: center;
     height: 100vh; /* Full viewport height */
     padding: 2rem;
+    background: linear-gradient(90deg, #a28acf, #088297);
 }
 
 .wrapper {
@@ -18,17 +19,17 @@ body {
     width: 100%;
     max-width: 400px;
     padding: 3rem;
-    background: #ffffff;
+    background: linear-gradient(45deg, #088297, #a28acf); /* Gradient background */
     color: black;
     border-radius: 10px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(255, 255, 255, 0.3) 0px 1px 3px -1px;
     height: auto;
-    transition: box-shadow 0.3s, transform 0.3s;
+    box-sizing: border-box; /* Include padding and border in total width */
+    overflow: hidden; /* Prevent overflowing content */
 }
 
 .content:hover {
-    box-shadow: 0 0 15px rgba(0,0,0,0.3); /* Adjust shadow on hover */
-    transform: translateY(-5px); /* Optional: Lift card slightly on hover */
+    box-shadow: 0 0 15px rgba(81, 4, 112, 0.8);
 }
 
 .form-block {
@@ -55,13 +56,14 @@ body {
     color: #000000;
     border-radius: 5px;
     margin-bottom: 1rem;
+    box-sizing: border-box; /* Include padding and border in total width */
 }
 
 .btn-primary {
     width: 100%; /* Full width by default */
     max-width: 200px; /* Limit maximum width */
     padding: 0.75rem; /* Adjusted padding */
-    background: #0c9c2b;
+    background: linear-gradient(45deg, #106270, #5a2aad); /* Gradient background */
     border: none;
     color: #fff;
     border-radius: 5px;
@@ -70,7 +72,7 @@ body {
 }
 
 .btn-primary:hover {
-    background: #0b700b;
+    background: linear-gradient(45deg, #371b69, #09353d); /* Adjusted gradient on hover */
 }
 
 .forgot-pass {
@@ -103,11 +105,69 @@ body {
     text-decoration: underline;
 }
 
+.control {
+    display: inline-block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    user-select: none;
+    color: #555;
+}
+
+.control input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.control__indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+    border: 1px solid #050505;
+    border-radius: 3px;
+}
+
+.control--checkbox .control__indicator:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.control input:checked ~ .control__indicator {
+    background-color: #071a57;
+    border: none;
+}
+
+.control input:checked ~ .control__indicator:after {
+    display: block;
+}
+
+.control--checkbox .control__indicator:after {
+    left: 3px;
+    top: 1px;
+    width: 8px;
+    height: 12px;
+    border: solid rgb(255, 255, 255);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
 
 /* Media query for smaller screens */
 @media only screen and (max-width: 600px) {
     .content {
         padding: 1rem; /* Adjust padding for smaller screens */
+    }
+
+    .form-control {
+        padding: 0.5rem; /* Adjusted padding for smaller inputs */
     }
 
     .btn-primary {
