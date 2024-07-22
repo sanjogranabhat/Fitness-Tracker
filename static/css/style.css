@@ -135,7 +135,7 @@ nav .logo-img {
 
 #menu-links h4 {
     border-radius: 50px;
-    color: #837c7cbb;
+    color: #000000bb;
     transition: all ease 0.4s;
     position: relative;
     font-size: 15px;
@@ -213,7 +213,7 @@ nav .logo-img {
     max-width: 220px;
     width: 100%;
     right: 10px;
-    background-color: rgb(77, 77, 77);
+    background: linear-gradient(45deg, #29fd53,#10b981);
     border-radius: 10px;
     max-height: 0;
     overflow: hidden;
@@ -221,7 +221,7 @@ nav .logo-img {
  
 }
 .profile-dropdown-list p{
-    color: white;
+    color: rgb(15, 15, 15);
     padding: 10px 15px;
 	margin: 0;
 
@@ -262,11 +262,10 @@ nav .logo-img {
 .profile-dropdown-list-item:hover {
     padding-left: 1.5rem;
     color: white;
-    background-color: black;
+    background-color: rgb(7, 100, 62);
   
 }
 .profile-dropdown-list li p{
-
     text-align: center;
 }
 .profile-dropdown-list li p a{
@@ -584,7 +583,7 @@ section {
         top: 40px;
         right: 0;
         flex-direction: column;
-        background-color: rgb(77, 77, 77);
+        background: linear-gradient(45deg, #29fd53,#10b981);
         overflow: hidden;
         max-height: auto;
         
@@ -643,9 +642,9 @@ section {
 @media screen and (max-width: 480px) {
     .profile-dropdown-list {
         position: absolute;
-        top: 350px; 
-        right: 125px; 
-        width: 200px; 
+        top: 360px; 
+        right: 150px; 
+        width: 220px; 
     }
 }
 

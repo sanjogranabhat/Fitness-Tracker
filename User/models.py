@@ -12,6 +12,8 @@ class Member(models.Model):
     DOB= models.DateField(null=True)
     occupation = models.CharField(max_length= 20, null=True)
     address = models.CharField(max_length=30, null=True)
+    email = models.CharField(max_length=50, blank=True, null=True)
+    
     
     def calculate_age(self):
         if self.DOB:

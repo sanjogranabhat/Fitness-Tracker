@@ -66,6 +66,12 @@
                                         {% else %}
                                         {{ user.username }}
                                         {% endif %}
+
+                                        {% if profile.email %}
+                                        {{ profile.email }}
+                                        {% else %}
+                                        {{ user.email }}
+                                        {% endif %}
                                     </a></p>
                                 </li>
                                 <li class="profile-dropdown-list-item">
