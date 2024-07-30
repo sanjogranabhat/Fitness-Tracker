@@ -274,7 +274,6 @@ nav .logo-img {
 }
 
 
-/*Landing Section */
 .hero {
     background: no-repeat center center/cover;
     height: 100vh;
@@ -314,9 +313,9 @@ nav .logo-img {
   .btn:hover {
     background-color: transparent;
     color: #fff;
-  }
+  }  
 
-
+ 
 
 
 
