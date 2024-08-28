@@ -97,7 +97,7 @@
         {% if exercise.video_url %}
         <a href="{{ exercise.video_url }}" class="gradient-button">Watch Video</a>
         {% endif %}
-        <a href="{% url 'exercise_update' exercise.pk %}" class="button">Edit</a>
+        <!-- <a href="{% url 'exercise_update' exercise.pk %}" class="button">Edit</a> -->
         <a href="{% url 'exercise_list' %}" class="button">Back to Exercise List</a>
     </div>
 {% endblock %}

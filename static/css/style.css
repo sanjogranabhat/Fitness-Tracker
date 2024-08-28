@@ -98,6 +98,22 @@ nav .logo-img {
 #nav-part2 h4:hover a {
     color: #080808;
 }
+#menu-links h4 a {
+    color: rgb(240, 236, 236);
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+}
+
+#menu-links h4 a.active {
+    color: #007bff; /* Change to your desired color for the active link */
+    font-weight: bold; /* Optionally, make it bold */
+    text-decoration: underline; /* Optionally, add an underline */
+}
+
+#menu-links h4:hover a {
+    color: #070707;
+}
 /* hamburger menu */
 .menu-icon {
     display: none;
@@ -112,7 +128,7 @@ nav .logo-img {
 .bar {
     width: 100%;
     height: 3px;
-    background-color: #000000;
+    background-color: #ffffff;
     transition: all 0.3s ease;
 }
 

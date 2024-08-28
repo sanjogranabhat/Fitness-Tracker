@@ -30,6 +30,7 @@ urlpatterns = [
     path('progress/', include('Progress.urls')),
     path('user/', include('User.urls')),
     path('membership/', include('Membership.urls')),
+    path('adminsite/', include('Admin.urls')),
 
 ]
 

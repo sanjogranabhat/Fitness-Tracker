@@ -94,9 +94,9 @@
 
     <h1>Exercise Library</h1>
 
-    <div class="add-exercise-button-container">
+    <!-- <div class="add-exercise-button-container">
         <a href="{% url 'exercise_create' %}" class="add-exercise-button">Add New Exercise</a>
-    </div>
+    </div> -->
 
     <div class="exercise-list">
         {% for exercise in exercises %}
@@ -113,7 +113,7 @@
                 <p>Difficulty: {{ exercise.difficulty }}</p>
                 <div class="exercise-card-buttons">
                     <a href="{% url 'exercise_detail' exercise.pk %}">View Details</a>
-                    <a href="{% url 'exercise_update' exercise.pk %}">Edit</a>
+                    <!-- <a href="{% url 'exercise_update' exercise.pk %}">Edit</a> -->
                 </div>
             </div>
         </div>

@@ -17,9 +17,9 @@ body {
 
 .content {
     width: 100%;
-    max-width: 400px;
+    max-width: 400px; /* Fixed max width for forms */
     padding: 3rem;
-    background: linear-gradient(45deg, #088297, #a28acf); /* Gradient background */
+    background: linear-gradient(45deg, #088297, #06508d); /* Gradient background */
     color: black;
     border-radius: 10px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(255, 255, 255, 0.3) 0px 1px 3px -1px;
@@ -29,7 +29,17 @@ body {
 }
 
 .content:hover {
-    box-shadow: 0 0 15px rgba(81, 4, 112, 0.8);
+    box-shadow: 10px 30px 40px rgba(5, 1, 58, 0.8);
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 70%; /* Responsive logo size */
+    height: auto;
 }
 
 .form-block {
@@ -48,9 +58,34 @@ body {
     margin-bottom: 0.5rem;
 }
 
+.input-icon {
+    display: flex;
+    align-items: center;
+    position: relative; /* Position relative to allow absolute positioning of the eye icon */
+}
+
+.input-icon i {
+    margin-right: 10px; /* Space between the icon and the input field */
+    color: #000000; /* Icon color */
+    font-size: 1rem; /* Icon size */
+}
+
+.input-icon .form-control {
+    flex-grow: 1; /* Allow the input field to take up remaining space */
+    padding: 0.75rem; /* Adjust padding */
+}
+
+#togglePassword, #togglePassword1, #togglePassword2 {
+    position: absolute; /* Position the eye icon absolutely */
+    right: 10px; /* Adjust the distance from the right */
+    cursor: pointer; /* Change cursor to pointer */
+    color: #000000; /* Icon color */
+    display: none; /* Initially hidden */
+}
+
 .form-control {
     width: 100%;
-    padding: 0.75rem;
+    padding: 0.75rem 0.75rem 0.75rem 2.5rem;
     background: #ffffff;
     border: 1px solid #444;
     color: #000000;
@@ -63,7 +98,7 @@ body {
     width: 100%; /* Full width by default */
     max-width: 200px; /* Limit maximum width */
     padding: 0.75rem; /* Adjusted padding */
-    background: linear-gradient(45deg, #106270, #5a2aad); /* Gradient background */
+    background: linear-gradient(45deg, #042b96, #1f0350); /* Gradient background */
     border: none;
     color: #fff;
     border-radius: 5px;
@@ -71,24 +106,14 @@ body {
     transition: background 0.3s;
 }
 
+
 .btn-primary:hover {
-    background: linear-gradient(45deg, #371b69, #09353d); /* Adjusted gradient on hover */
-}
-
-.forgot-pass {
-    color: #999;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 1rem;
-}
-
-.forgot-pass:hover {
-    color: #ccc;
+    background: linear-gradient(45deg,  #1f0350, #042b96); /* Adjusted gradient on hover */
 }
 
 .register-link {
     margin-top: 20px;
-    color: #303030;
+    color: #f3e6e6;
     text-decoration: none;
 }
 
@@ -160,14 +185,40 @@ body {
     transform: rotate(45deg);
 }
 
-/* Media query for smaller screens */
-@media only screen and (max-width: 600px) {
+
+
+@media only screen and (max-width: 900px) {
     .content {
-        padding: 1rem; /* Adjust padding for smaller screens */
+        padding: 2rem; /* Adjust padding for medium screens */
+        max-width: 80%; /* Allow more width on medium screens */
     }
 
     .form-control {
-        padding: 0.5rem; /* Adjusted padding for smaller inputs */
+        padding: 0.5rem 0.5rem 0.5rem 2rem; /* Adjusted padding for smaller inputs */
+    }
+
+    .btn-primary {
+        width: 100%; /* Full width on medium screens */
+        padding: 0.5rem; /* Reduced padding for smaller button size */
+    }
+
+    .input-icon i {
+        font-size: 1.5rem; /* Keep icon size consistent */
+    }
+
+    .logo {
+        max-width: 70%; /* Further reduce logo size on medium screens */
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .content {
+        padding: 1rem; /* Adjust padding for smaller screens */
+        max-width: 90%; /* Allow more width on smaller screens */
+    }
+
+    .form-control {
+        padding: 0.5rem 0.5rem 0.5rem 2rem; /* Adjusted padding for smaller inputs */
     }
 
     .btn-primary {
@@ -175,4 +226,49 @@ body {
         max-width: 100%; /* Ensure button adjusts to container width */
         padding: 0.5rem; /* Reduced padding for smaller button size */
     }
+
+    .input-icon i {
+        font-size: 1.2rem; /* Smaller icon size for mobile */
+    }
+
+    .logo {
+        max-width: 60%; /* Further reduce logo size on mobile */
+    }
 }
+
+@media only screen and (max-width: 600px) {
+    .content {
+        padding: 1rem; /* Adjust padding for smaller screens */
+        max-width: 90%; /* Allow more width on smaller screens */
+    }
+
+    .form-control {
+        padding: 0.5rem 0.5rem 0.5rem 2rem; /* Adjusted padding for smaller inputs */
+    }
+
+    .btn-primary {
+        width: 100%; /* Full width on smaller screens */
+        max-width: 100%; /* Ensure button adjusts to container width */
+        padding: 0.5rem; /* Reduced padding for smaller button size */
+    }
+
+    .input-icon i {
+        font-size: 1.2rem; /* Smaller icon size for mobile */
+    }
+
+    .logo {
+        width: 80%; /* Make logo smaller on mobile */
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    /* Styles for tablets */
+    .content {
+        padding: 2rem; /* Slightly reduced padding for tablet sizes */
+    }
+
+    .logo {
+        width: 60%; /* Logo adjusts to tablet size */
+    }
+}
+

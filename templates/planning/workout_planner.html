@@ -26,7 +26,7 @@
                 <ul class="list-group">
                     {% for plan in workout_plans %}
                     <li class="list-group-item">
-                      <strong>  {{ plan.exercise.name }}</strong>-
+                      <strong>  {{ plan.exercise.name }}</strong>
                         <a href="{% url 'add_workout_session' plan.id %}" class="btn btn-sm btn-primary btn-hover">Add Session</a>
                         <table class="table table-bordered mt-2">
                             <thead>

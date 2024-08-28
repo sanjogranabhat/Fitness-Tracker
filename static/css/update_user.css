@@ -102,12 +102,13 @@ textarea {
 
 .button-group {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    justify-content: space-between; /* Adjust spacing between buttons */
 }
 
 .btn {
     text-decoration: none;
-    width: 100px; /* Smaller button size */
+    width: 45%; /* Set buttons to take 45% of the width */
     text-align: center;
     padding: 8px;
     background-color: #1b8175;
@@ -116,6 +117,7 @@ textarea {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
+    margin: 5px 0; /* Add vertical margin for spacing */
 }
 
 .btn:hover {
@@ -140,4 +142,35 @@ textarea {
     color: #721c24;
     border: 1px solid #f5c6cb;
     border-radius: 4px;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    .profile-picture {
+        width: 120px;
+        height: 120px;
+    }
+
+    .btn {
+        width: 100%; /* Full width on small screens */
+        margin: 5px auto; /* Center buttons */
+    }
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.5em; /* Smaller heading size */
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    input[type="date"],
+    textarea {
+        padding: 8px; /* Smaller padding */
+    }
 }

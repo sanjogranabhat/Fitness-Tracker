@@ -25,7 +25,12 @@ SECRET_KEY = 'django-insecure-u*1hkbv-l8^+(!sq1-*7^^7*c38(_*_@6szdif=nppns(lsbnx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '192.168.1.158',
+    '192.168.1.64',
+    '127.0.0.1',
+    '10.32.17.8',
+]
 
 
 # Application definition
@@ -50,6 +55,7 @@ INSTALLED_APPS = [
     'Dashboard',
     'planning',
     'Membership',
+    'Admin',
     
 ]
 
@@ -146,3 +152,10 @@ LOGIN_URL = '/register/register/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#payment integration
+ESEWA_SECRET_KEY = '8gBm/:&EnhH.1/q'
+ESEWA_PAYMENT_URL = 'https://epay.esewa.com.np/api/epay/main/v2/form'
+ESEWA_MERCHANT_CODE = 'EPAYTEST'
+ESEWA_VERIFY_URL='https://uat.esewa.com.np/api/epay/transaction/status'
+ESEWA_ENVIRONMENT='test'
